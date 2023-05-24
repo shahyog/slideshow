@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="slider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="name">
+    (Advance Web Designing </BR>
+    Assessment Test 4)
+
+  </h1>
+  <div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade" id="changecolour">
+      <div class="numbertext">1 / 3</div>
+      <img src="img1.jpeg" style="width:100%">
+      <div class="text">Berry image</div>
+    </div>
+  
+    <div class="mySlides fade " id="changecolour">
+      <div class="numbertext">2 / 3</div>
+      <img src="img2.jpeg" style="width:100%">
+      <div class="text">Sunset image</div>
+    </div>
+  
+    <div class="mySlides fade" id="changecolour">
+      <div class="numbertext">3 / 3</div>
+      <img src="img3.jpeg" style="width:100%">
+      <div class="text">Leaf image</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+   
+    <p class="prev" onclick="plusSlides(-1)">&#10094;</p>
+    <p class="next" onclick="plusSlides(1)">&#10095;</p>
+  </div>
+  <br>
+
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+
+<h1 style="text-align: center; color: pink;">
+  Tap on image
+</h1>
+
+
+  <!-- <javascipt> -->
+    <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  
+
+ 
+
+
+
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('#changecolour').click(function(){
+        $("p").css({"background-color": "pink", "font-size": "200%"});
+      });
+    });
+    </script>
+</body>
+</html>
